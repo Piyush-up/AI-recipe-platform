@@ -10,9 +10,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Cookie, Refrigerator } from "lucide-react";
 import UserDropdown from "./UserDropdown";
+import checkUser from "@/lib/checkUser";
 
-function Header() {
-  let user = null;
+async function Header() {
+  let user = await checkUser();
 
   return (
     <header className=" fixed top-0 w-full border-b border-stone-400 bg-stone-50/80 backdrop-blur-md z-50 supports-backdrop-filter:bg-stone-50/60">
