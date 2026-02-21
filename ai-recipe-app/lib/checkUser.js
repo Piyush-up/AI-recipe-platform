@@ -6,7 +6,7 @@ const STRAPI_API_TOKEN = process.env.STRAPI_API_TOKEN;
 
 async function checkUser() {
   const user = await currentUser();
-  console.log(user);
+  // console.log(user);
 
   if (!user) {
     console.log("No user found!");
@@ -40,7 +40,7 @@ async function checkUser() {
     }
 
     const existingUserData = await existingUserResponse.json();
-    console.log(existingUserData);
+    // console.log(existingUserData);
 
     // IF USER EXISTS IN STRAPI
     if (existingUserData.length > 0) {
@@ -71,7 +71,7 @@ async function checkUser() {
     );
 
     const rolesData = await rolesResponse.json();
-    console.log(rolesData);
+    // console.log(rolesData);
     const authenticatedRole = rolesData.roles.find(
       (role) => role.type === "authenticated",
     );
